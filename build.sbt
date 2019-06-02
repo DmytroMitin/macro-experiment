@@ -9,4 +9,9 @@ lazy val macroImpl = project
   ))
 lazy val use = project
   .dependsOn(macroImpl)
-    .settings(scalacOptions += "-Ymacro-debug-lite")
+  .settings(scalacOptions += "-Ymacro-debug-lite")
+
+lazy val core = project
+  .dependsOn(use)
+  .settings(scalacOptions += "-Ymacro-debug-lite")
+
